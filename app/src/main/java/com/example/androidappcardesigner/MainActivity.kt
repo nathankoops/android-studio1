@@ -6,6 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+import android.widget.Button
+import android.widget.Toast
+import android.content.Intent
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,5 +20,12 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val terug = findViewById<Button>(R.id.button2)
+        terug.setOnClickListener {
+            val intent = Intent(this,MainActivity2::class.java)
+                startActivity(intent)
+        }
     }
 }
+
+
