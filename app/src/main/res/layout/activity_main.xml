@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,42 +11,43 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
         android:text="Car Designer"
         android:textColor="#222222"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="65dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/kiesAuto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
         android:text="Kies je type auto"
         android:textColor="#333333"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/textView2"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="35dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView2" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/kiesAuto"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/kiesAuto">
 
         <RadioButton
             android:id="@+id/radioSport"
             android:layout_width="match_parent"
             android:layout_height="55dp"
+            app:buttonTint="#D90000"
             android:text="Sportwagen"
             android:textColor="#222222"
             android:textSize="19sp" />
@@ -56,6 +56,7 @@
             android:id="@+id/radioSUV"
             android:layout_width="match_parent"
             android:layout_height="55dp"
+            app:buttonTint="#D90000"
             android:text="SUV"
             android:textColor="#222222"
             android:textSize="19sp" />
@@ -64,6 +65,7 @@
             android:id="@+id/radioOldtimer"
             android:layout_width="match_parent"
             android:layout_height="55dp"
+            app:buttonTint="#D90000"
             android:text="Oldtimer"
             android:textColor="#222222"
             android:textSize="19sp" />
@@ -74,14 +76,14 @@
         android:id="@+id/button"
         android:layout_width="210dp"
         android:layout_height="70dp"
+        android:layout_marginBottom="55dp"
+        android:backgroundTint="#D90000"
         android:text="VOLGENDE PAGINA"
         android:textColor="#FFFFFF"
         android:textSize="17sp"
         android:textStyle="bold"
-        android:background="@drawable/button_red"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="55dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
