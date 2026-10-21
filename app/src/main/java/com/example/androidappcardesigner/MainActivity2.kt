@@ -1,11 +1,12 @@
 
 package com.example.androidappcardesigner
 
-import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity2 : AppCompatActivity() {
@@ -14,36 +15,65 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-        window.statusBarColor = Color.rgb(217, 0, 0)
-        window.navigationBarColor = Color.rgb(217, 0, 0)
+        val autoAfbeelding =
+            findViewById<ImageView>(R.id.imageView2)
 
-        val auto1 = findViewById<ImageView>(R.id.imageView2)
-        val auto2 = findViewById<ImageView>(R.id.imageView3)
+        val titelAuto =
+            findViewById<TextView>(R.id.titelAuto)
 
-        when (intent.getStringExtra("gekozenAuto")) {
-            "suv" -> {
-                auto1.setImageResource(R.drawable.suv)
-                auto2.setImageResource(R.drawable.suv2)
-            }
+        val geselecteerdeKleur =
+            findViewById<TextView>(R.id.geselecteerdeKleur)
 
-            "oldtimer" -> {
-                auto1.setImageResource(R.drawable.oldtimer)
-                auto2.setImageResource(R.drawable.oldtimer2)
-            }
+        val gekozenAuto = intent.getStringExtra("gekozenAuto")
 
-            "sport" -> {
-                auto1.setImageResource(R.drawable.sportauto)
-                auto2.setImageResource(R.drawable.sportauto2)
-            }
+        val afbeeldingId = when (gekozenAuto) {
+            "sport" -> R.drawable.sportauto
+            "suv" -> R.drawable.suv
+            "oldtimer" -> R.drawable.oldtimer
+            else -> 0
         }
 
-        val terug = findViewById<Button>(R.id.button2)
+        if (afbeeldingId != 0) {
+            autoAfbeelding.setImageResource(afbeeldingId)
+        } else {
+            Toast.makeText(
+                this,
+                "De afbeelding van deze auto ontbreekt.",
+                Toast.LENGTH_LONG
+            ).show()
+        }
 
-        terug.backgroundTintList =
-            ColorStateList.valueOf(Color.rgb(217, 0, 0))
-        terug.setTextColor(Color.WHITE)
+        titelAuto.text = when (gekozenAuto) {
+            "sport" -> "Jouw sportwagen"
+            "suv" -> "Jouw SUV"
+            "oldtimer" -> "Jouw oldtimer"
+            else -> "Jouw auto"
+        }
 
-        terug.setOnClickListener {
+        fun kiesKleur(naam: String, kleur: Int) {
+            geselecteerdeKleur.text = "Gekozen kleur: $naam"
+
+
+            autoAfbeelding.clearColorFilter()
+        }
+
+        findViewById<Button>(R.id.kleurRood).setOnClickListener {
+            kiesKleur("rood", Color.RED)
+        }
+
+        findViewById<Button>(R.id.kleurBlauw).setOnClickListener {
+            kiesKleur("blauw", Color.BLUE)
+        }
+
+        findViewById<Button>(R.id.kleurZwart).setOnClickListener {
+            kiesKleur("zwart", Color.BLACK)
+        }
+
+        findViewById<Button>(R.id.kleurWit).setOnClickListener {
+            kiesKleur("wit", Color.WHITE)
+        }
+
+        findViewById<Button>(R.id.button2).setOnClickListener {
             finish()
         }
     }

@@ -1,9 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.AndroidAppCarDesigner" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    <style name="Base.Theme.AndroidAppCarDesigner"
+        parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Rode balk bovenaan -->
+        <item name="colorPrimary">#E52525</item>
+        <item name="colorPrimaryContainer">#C90000</item>
+
+        <!-- Paarse bolletjes rood maken -->
+        <item name="colorControlActivated">#E52525</item>
+        <item name="colorAccent">#E52525</item>
+
+        <!-- Statusbalk rood maken -->
+        <item name="android:statusBarColor">#E52525</item>
+
     </style>
 
-    <style name="Theme.AndroidAppCarDesigner" parent="Base.Theme.AndroidAppCarDesigner" />
+    <style name="Theme.AndroidAppCarDesigner"
+        parent="Base.Theme.AndroidAppCarDesigner" />
+
 </resources>
