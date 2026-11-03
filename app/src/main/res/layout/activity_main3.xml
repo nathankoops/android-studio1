@@ -35,21 +35,21 @@
         app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <Button
-        android:id="@+id/buttonNaarPagina1"
+        android:id="@+id/button4"
         android:layout_width="165dp"
         android:layout_height="55dp"
         android:backgroundTint="#D90000"
-        android:text="Home"
+        android:text="Volgende"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintHorizontal_bias="0.918"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/buttonNaarPagina2"
         app:layout_constraintVertical_bias="0.0" />
-
 
     <TextView
         android:id="@+id/logoCarDesinger"

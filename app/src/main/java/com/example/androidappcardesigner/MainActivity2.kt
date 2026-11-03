@@ -1,13 +1,15 @@
-
 package com.example.androidappcardesigner
 
 import android.graphics.Color
 import android.os.Bundle
+import android.content.Intent
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+
+
 
 class MainActivity2 : AppCompatActivity() {
 
@@ -52,8 +54,6 @@ class MainActivity2 : AppCompatActivity() {
 
         fun kiesKleur(naam: String, kleur: Int) {
             geselecteerdeKleur.text = "Gekozen kleur: $naam"
-
-
             autoAfbeelding.clearColorFilter()
         }
 
@@ -71,6 +71,27 @@ class MainActivity2 : AppCompatActivity() {
 
         findViewById<Button>(R.id.kleurWit).setOnClickListener {
             kiesKleur("wit", Color.WHITE)
+        }
+        val volgende = findViewById<Button>(R.id.button2)
+
+        volgende.setOnClickListener {
+            val intent = Intent(this, MainActivity3::class.java)
+            startActivity(intent)
+        }
+
+
+        findViewById<Button>(R.id.button3).setOnClickListener {
+
+            val intent = Intent(this, MainActivity3::class.java)
+
+            intent.putExtra(
+                "kleur",
+                geselecteerdeKleur.text.toString()
+            )
+
+            intent.putExtra("gekozenAuto", gekozenAuto)
+
+            startActivity(intent)
         }
 
         findViewById<Button>(R.id.button2).setOnClickListener {

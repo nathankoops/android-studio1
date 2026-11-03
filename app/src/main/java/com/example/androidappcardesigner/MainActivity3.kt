@@ -19,18 +19,21 @@ class MainActivity3 : AppCompatActivity() {
         window.statusBarColor = rood
         window.navigationBarColor = rood
 
+        val naarPagina4 =
+            findViewById<Button>(R.id.button4)
+
         val naarPagina2 =
             findViewById<Button>(R.id.buttonNaarPagina2)
 
-        val naarPagina1 =
-            findViewById<Button>(R.id.buttonNaarPagina1)
 
-        listOf(naarPagina2, naarPagina1).forEach { knop ->
-            knop.backgroundTintList = ColorStateList.valueOf(rood)
-            knop.setTextColor(Color.WHITE)
+
+
+        val volgende = findViewById<Button>(R.id.button3)
+
+        volgende.setOnClickListener {
+            val intent = Intent(this, MainActivity3::class.java)
+            startActivity(intent)
         }
-
-
         naarPagina2.setOnClickListener {
             finish()
         }
