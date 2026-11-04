@@ -1,11 +1,10 @@
 
 package com.example.androidappcardesigner
 
-import android.content.Intent
-import android.content.res.ColorStateList
-import android.graphics.Color
 import android.os.Bundle
+import android.content.Intent
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity3 : AppCompatActivity() {
@@ -14,35 +13,39 @@ class MainActivity3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
 
-        val rood = Color.rgb(217, 0, 0)
+        val v12 = findViewById<Button>(R.id.button5)
+        val v8 = findViewById<Button>(R.id.button6)
+        val v6 = findViewById<Button>(R.id.button7)
 
-        window.statusBarColor = rood
-        window.navigationBarColor = rood
+        val geselecteerdeMotor = findViewById<TextView>(R.id.textView3)
 
-        val naarPagina4 =
-            findViewById<Button>(R.id.button4)
+        v12.setOnClickListener {
+            geselecteerdeMotor.text =
+                "De geselecteerde motor is: V12 Twin Turbo"
+        }
 
-        val naarPagina2 =
-            findViewById<Button>(R.id.buttonNaarPagina2)
+        v8.setOnClickListener {
+            geselecteerdeMotor.text =
+                "De geselecteerde motor is: V8"
+        }
 
+        v6.setOnClickListener {
+            geselecteerdeMotor.text =
+                "De geselecteerde motor is: V6"
+        }
 
-
-
-        val volgende = findViewById<Button>(R.id.button3)
+        // Naar pagina 4
+        val volgende = findViewById<Button>(R.id.button4)
 
         volgende.setOnClickListener {
-            val intent = Intent(this, MainActivity3::class.java)
+            val intent = Intent(this, MainActivity4::class.java)
             startActivity(intent)
         }
-        naarPagina2.setOnClickListener {
-            finish()
-        }
 
+        // Terug naar pagina 2
+        val terug = findViewById<Button>(R.id.buttonNaarPagina3)
 
-        naarPagina1.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-            startActivity(intent)
+        terug.setOnClickListener {
             finish()
         }
     }
