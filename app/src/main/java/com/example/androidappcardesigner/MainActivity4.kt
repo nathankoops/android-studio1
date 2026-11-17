@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.EditText
 import android.widget.Button
+import android.content.Intent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -32,7 +33,7 @@ class MainActivity4 : AppCompatActivity() {
             insets
         }
 
-        // Gegevens ophalen van vorige pagina's
+        // Gegevens ophalen van vorige pagina
         val kleur = intent.getStringExtra("kleur")
         val gekozenAuto = intent.getStringExtra("gekozenAuto")
 
@@ -66,8 +67,10 @@ class MainActivity4 : AppCompatActivity() {
             if (ingevuldAdres.isEmpty()) {
                 adres.error = "Vul je adres in"
             } else {
-                informatie.text = "Je bestelling is ingevuld!\nAdres: $ingevuldAdres"
+                val intent = Intent(this, MainActivity5::class.java)
+                startActivity(intent)
             }
         }
     }
 }
+
